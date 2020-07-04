@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderServiceImpl implements OrderService {
 
+    // 使用Feign，测试微服务调用
     @Autowired
     private PaymentService paymentService;
 
