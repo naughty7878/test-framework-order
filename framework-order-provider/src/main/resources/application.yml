@@ -1,0 +1,32 @@
+# 端口
+server:
+  port: 20705
+
+spring:
+#  application:
+#    name: order-server
+
+mybatis:
+  mapperLocations: classpath:mapper/*Mapper.xml
+#  # 所有entity别名类所在的包
+#  type-aliases-pachage: com.test.springcloud.entities
+# Eureka配置
+eureka:
+  instance:
+    # 访问路径可以显示IP地址
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname:localhost}:${eureka.server.port:8761}/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    shutdown:
+      enabled: true
+
+

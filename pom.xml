@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.test</groupId>
+    <artifactId>test-framework-order</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <modules>
+        <module>framework-order-api</module>
+        <module>framework-order-client</module>
+        <module>framework-order-provider</module>
+    </modules>
+
+    <properties>
+        <test-framework.version>1.0.0-SNAPSHOT</test-framework.version>
+        <framework-payment-client.version>1.0.0-SNAPSHOT</framework-payment-client.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>test-framework</artifactId>
+                <version>${test-framework.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>framework-payment-client</artifactId>
+                <version>${framework-payment-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.test</groupId>
+                <artifactId>framework-order-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
