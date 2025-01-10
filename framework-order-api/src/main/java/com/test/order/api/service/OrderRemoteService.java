@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface OrderRemoteService {
 
     @RequestMapping(value = {"consumer/payment/get"}, method = {RequestMethod.POST})
-    public CommonResult get(@RequestBody OrderBo orderBo);
+    public CommonResult<?> get(@RequestBody OrderBo orderBo);
 }
