@@ -1,6 +1,6 @@
 package com.test.order.api.service;
 
-import com.test.common.entities.CommonResult;
+import com.test.common.entity.CommonResult;
 import com.test.order.api.bo.OrderBo;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

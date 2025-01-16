@@ -13,18 +13,30 @@
 
 
     <dependencies>
-
-        <!-- eureka client -->
+        <!-- alibaba nacos 注册中心-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!-- hystrix 停止维护移除 -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
-<!--        </dependency>-->
+        <!-- alibaba nacos 配置中心-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+            <!-- 报错：Param 'serviceName' is illegal, serviceName is blank
+                 解决：默认不加载bootstrap.yml文件问题-->
+        </dependency>
+
+        <!-- sleuth 链路追踪 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
 
         <!-- openfeign -->
         <dependency>
@@ -32,15 +44,11 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-        <!-- spring cloud config client-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-commons</artifactId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <!-- 问题：No Feign Client for loadBalancing defined.
+                 解决：高版本openfeign没有loadbalancer的问题-->
         </dependency>
 
         <!-- spring boot -->
@@ -60,9 +68,51 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>framework-payment-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>framework-order-api</artifactId>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <!-- mybatis -->
+        <!-- mp依赖 会自动的维护mybatis 以及 mybatis-spring 相关依赖-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
+        <!-- mybatis-plus-generator，逆向生成代码 -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- SpringBoot中包含freemarker，逆向生成代码模板 -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- test -->
@@ -78,15 +128,7 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>com.test</groupId>
-            <artifactId>framework-payment-client</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>com.test</groupId>
-            <artifactId>framework-order-api</artifactId>
-        </dependency>
     </dependencies>
 
     <build>

@@ -1,9 +1,8 @@
 package com.test.order.provider.service.impl;
 
-import com.test.common.entities.CommonResult;
+import com.test.common.entity.CommonResult;
 import com.test.order.provider.service.OrderService;
-import com.test.payment.api.bo.PaymentBo;
-import com.test.payment.api.model.Payment;
+import com.test.payment.api.dto.PaymentReqDto;
 import com.test.payment.client.PaymentClient;
 import com.test.payment.client.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,15 +16,15 @@ public class OrderServiceImpl implements OrderService {
     private PaymentService paymentService;
 
     @Override
-    public CommonResult<Payment> get(Long id) {
+    public CommonResult get(Long id) {
 
-        PaymentBo paymentBo = new PaymentBo();
-        paymentBo.setId(id);
+        PaymentReqDto paymentReqDto = new PaymentReqDto();
+        paymentReqDto.setId(id);
 
         // 方法一，使用Feign直接调用
 //        return paymentService.get(paymentBo);
         // 方法二，使用业务提供的Client调用
-        return PaymentClient.get(paymentBo);
+        return PaymentClient.get(paymentReqDto);
 
     }
 }
