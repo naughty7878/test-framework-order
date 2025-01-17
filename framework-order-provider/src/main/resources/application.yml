@@ -6,6 +6,19 @@ spring:
 #  application:
 #    name: order-server
 
+
+# 开启feign对hystrix的支持
+feign:
+  hystrix:
+    enabled: true
+
+
+logging:
+  level:
+    root: debug
+  path: /data/logs
+
+
 management:
   endpoints:
     web:
@@ -14,9 +27,3 @@ management:
   endpoint:
     shutdown:
       enabled: true
-
-
-# 开启feign对hystrix的支持
-feign:
-  hystrix:
-    enabled: true
