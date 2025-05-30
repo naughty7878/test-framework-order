@@ -3,9 +3,26 @@ server:
   port: 20705
 
 spring:
-#  application:
-#    name: order-server
-
+  application:
+    name: order-server
+  config:
+    import:
+      - optional:nacos:${spring.application.name}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.152:8848   # Nacos 地址
+        username: nacos                   # 默认账号
+        password: nacos                   # 默认密码
+        namespace: 0de7e8a0-5088-422a-8aa9-c172e46241f1        # 命名空间
+      config:
+        server-addr: 192.168.1.152:8848   # Nacos 地址
+        username: nacos                   # 默认账号
+        password: nacos                   # 默认密码
+        namespace: 0de7e8a0-5088-422a-8aa9-c172e46241f1
+        file-extension: yaml              # 配置内容文件的数据格式，默认值：properties
+        group: DEFAULT_GROUP
+        refresh-enabled: true  # 可选：启用动态刷新
 
 # 开启feign对hystrix的支持
 feign:
@@ -16,6 +33,8 @@ feign:
 logging:
   level:
     root: debug
+    org.apache.tomcat.util.compat: WARN
+    org.apache.coyote.http11.Http11Processor: WARN
   path: /data/logs
 
 
