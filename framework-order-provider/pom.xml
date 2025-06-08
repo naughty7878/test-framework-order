@@ -51,25 +51,25 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- test-framework-mybatis-starter -->
-        <dependency>
-            <groupId>com.test</groupId>
-            <artifactId>test-framework-mybatis-starter</artifactId>
-        </dependency>
+<!--        &lt;!&ndash; test-framework-mybatis-starter &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.test</groupId>-->
+<!--            <artifactId>test-framework-mybatis-starter</artifactId>-->
+<!--        </dependency>-->
 
-        <!-- MyBatis-Plus 代码生成器 -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-generator</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        &lt;!&ndash; MyBatis-Plus 代码生成器 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-generator</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
-        <!-- SpringBoot中包含freemarker，逆向生成代码模板 -->
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <scope>test</scope>
-        </dependency>
+<!--        &lt;!&ndash; SpringBoot中包含freemarker，逆向生成代码模板 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.freemarker</groupId>-->
+<!--            <artifactId>freemarker</artifactId>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
